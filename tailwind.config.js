@@ -1,7 +1,11 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: ['./index.html', './src/**/*.tsx'],
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ['Inter', ...fontFamily.sans],
+    },
   },
   plugins: [],
 };
