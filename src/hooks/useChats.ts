@@ -49,6 +49,8 @@ export function useChat(id?: string): UseChatType {
       return;
     }
 
+    !isLoading && setLoading(true);
+
     getChat(id)
       .then((chat) => {
         setChat(chat);
