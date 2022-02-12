@@ -39,11 +39,13 @@ export function useChats(): UseChatsType {
   };
 }
 
-export function useChat(id: string): UseChatType {
+export function useChat(id?: string): UseChatType {
   const [isLoading, setLoading] = useState(true);
   const [chat, setChat] = useState<Chat | null>(null);
 
   useEffect(() => {
+    if (!id) return setLoading(false);
+
     getChat(id)
       .then((chat) => {
         setChat(chat);

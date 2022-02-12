@@ -1,23 +1,11 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-import { getChat } from '../../lib/Chats';
-import { Chat } from '../../typings';
+import { useChat } from '../../hooks/useChats';
 
 import { ChatMember } from './ChatMember';
 
 export const ChatInfo = () => {
-  const [chat, setChat] = useState<Chat | null>(null);
-
-  const params = useParams();
-
-  useEffect(() => {
-    const id = params.id;
-
-    if (!id) return;
-
-    getChat(id).then(setChat);
-  }, []);
+  const { id } = useParams();
+  const { chat } = useChat(id);
 
   return (
     <div className="flex flex-col w-full max-w-sm p-4 overflow-y-auto border-l border-gray-200">
