@@ -1,4 +1,5 @@
 import { FiAward } from 'react-icons/fi';
+import { useParams } from 'react-router-dom';
 
 import { ChatLink } from './ChatLink';
 import { ChatsHeader } from './ChatsHeader';
@@ -7,16 +8,17 @@ import { useChats } from '../../hooks/useChats';
 
 export const Chats = () => {
   const { chats } = useChats();
+  const params = useParams();
 
   return (
     <section className="flex flex-col w-full max-w-sm gap-4 p-4 overflow-y-auto border-r border-gray-200">
       <ChatsHeader />
 
-      <ul className="flex flex-col gap-px">
+      <ul className="flex flex-col gap-1">
         {chats &&
           chats.map((chat) => (
             <li key={chat.id}>
-              <ChatLink chat={chat} />
+              <ChatLink chat={chat} isSelected={chat.id === params.id} />
             </li>
           ))}
       </ul>

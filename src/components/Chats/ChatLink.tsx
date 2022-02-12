@@ -4,15 +4,20 @@ import { ChatPreview } from '../../typings';
 
 interface ChatLinkProps {
   chat: ChatPreview;
+  isSelected?: boolean;
 }
 
-export const ChatLink = ({ chat }: ChatLinkProps) => {
+export const ChatLink = ({ chat, isSelected = false }: ChatLinkProps) => {
   /* TODO: Compare with id of logged user */
   const isSender = chat.lastMessage.author.id === '1';
 
   return (
     <Link to={`/chats/${chat.id}`}>
-      <div className="flex items-center gap-4 p-4 rounded-lg hover:bg-gradient-to-r from-slate-300/20 to-slate-300/10">
+      <div
+        className={`flex items-center gap-4 p-4 rounded-lg ${
+          isSelected ? '' : 'hover:'
+        }bg-gradient-to-r from-slate-300/20 to-slate-300/10`}
+      >
         <img className="w-12 h-12 rounded-lg" src={chat.pictureUrl} alt="Chat avatar" />
 
         <div className="flex flex-col flex-1">
