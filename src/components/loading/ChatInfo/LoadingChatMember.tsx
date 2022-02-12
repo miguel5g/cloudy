@@ -4,7 +4,7 @@ export const LoadingChatMember = () => {
       <div className="w-12 h-12 rounded-lg bg-slate-200 animate-pulse" />
 
       <div className="flex flex-col flex-1">
-        <div className="w-3/5 h-6 bg-slate-200 animate-pulse" />
+        <div className="w-3/5 h-6 rounded-lg bg-slate-200 animate-pulse" />
       </div>
     </div>
   );
