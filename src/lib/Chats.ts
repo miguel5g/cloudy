@@ -44,9 +44,9 @@ export async function getChat(id: string): Promise<Chat | null> {
       resolve({
         ...chat,
         members: [
-          { id: '1', name: 'User 1', avatarUrl: 'https://via.placeholder.com/64/0ea5e9' },
-          { id: '2', name: 'User 2', avatarUrl: 'https://via.placeholder.com/64/0ea5e9' },
-          { id: '3', name: 'User 3', avatarUrl: 'https://via.placeholder.com/64/0ea5e9' },
+          { id: '1', name: 'User 1', avatarUrl: 'https://via.placeholder.com/64/e0f2fe' },
+          { id: '2', name: 'User 2', avatarUrl: 'https://via.placeholder.com/64/e0f2fe' },
+          { id: '3', name: 'User 3', avatarUrl: 'https://via.placeholder.com/64/e0f2fe' },
         ],
       });
     }, 200);
