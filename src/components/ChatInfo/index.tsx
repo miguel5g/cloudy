@@ -1,11 +1,15 @@
 import { useParams } from 'react-router-dom';
+
 import { useChat } from '../../hooks/useChats';
 
+import { LoadingChatInfo } from '../loading/ChatInfo';
 import { ChatMember } from './ChatMember';
 
 export const ChatInfo = () => {
   const { id } = useParams();
-  const { chat } = useChat(id);
+  const { chat, isLoading } = useChat(id);
+
+  if (isLoading) return <LoadingChatInfo />;
 
   return (
     <div className="flex flex-col w-full max-w-sm p-4 overflow-y-auto border-l border-gray-200">
