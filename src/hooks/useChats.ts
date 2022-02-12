@@ -44,7 +44,10 @@ export function useChat(id?: string): UseChatType {
   const [chat, setChat] = useState<Chat | null>(null);
 
   useEffect(() => {
-    if (!id) return setLoading(false);
+    if (!id) {
+      isLoading && setLoading(false);
+      return;
+    }
 
     getChat(id)
       .then((chat) => {
@@ -56,7 +59,7 @@ export function useChat(id?: string): UseChatType {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [id]);
 
   return {
     isLoading,
