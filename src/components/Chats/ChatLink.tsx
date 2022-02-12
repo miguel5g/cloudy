@@ -3,23 +3,21 @@ import { Link } from 'react-router-dom';
 import { ChatPreview } from '../../typings';
 
 interface ChatLinkProps {
-  chat?: ChatPreview;
+  chat: ChatPreview;
 }
 
-export const ChatLink = ({}: ChatLinkProps) => {
+export const ChatLink = ({ chat }: ChatLinkProps) => {
+  const isSender = chat.lastMessage.author.id === '1';
+
   return (
-    <Link to={`/chats/${'id'}`}>
+    <Link to={`/chats/${chat.id}`}>
       <div className="flex items-center gap-4 p-4 rounded-lg hover:bg-gradient-to-r from-slate-300/20 to-slate-300/10">
-        <img
-          className="w-12 h-12 rounded-lg"
-          src="https://dummyimage.com/64x64"
-          alt="Chat avatar"
-        />
+        <img className="w-12 h-12 rounded-lg" src={chat.pictureUrl} alt="Chat avatar" />
 
         <div className="flex flex-col flex-1">
-          <h3 className="font-medium text-slate-700">Chat name</h3>
+          <h3 className="font-medium text-slate-700">{chat.name}</h3>
           <span className="-mt-1 text-sm font-light text-slate-500">
-            Você: Olá! esta é uma mensagem
+            {isSender ? 'Você' : chat.lastMessage.author.name}: {chat.lastMessage.content}
           </span>
         </div>
 
