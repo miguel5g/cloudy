@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 
 import { useChat } from '../../hooks/useChats';
+import { LoadingChat } from '../loading/Chat';
 
 import { ChatBox } from './ChatBox';
 import { ChatHeader } from './ChatHeader';
@@ -19,7 +20,7 @@ export const Chat = () => {
   }
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <LoadingChat />;
   }
 
   return (
