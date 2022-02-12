@@ -1,24 +1,6 @@
 import { Link } from 'react-router-dom';
 
-interface Author {
-  id: string;
-  name: string;
-  avatarUrl: string;
-}
-
-interface Message {
-  id: string;
-  content: string;
-  date: string;
-  author: Author;
-}
-
-interface ChatPreview {
-  id: string;
-  title: string;
-  avatarUrl: string;
-  lastMessage: Message;
-}
+import { ChatPreview } from '../../typings';
 
 interface ChatLinkProps {
   chat?: ChatPreview;
