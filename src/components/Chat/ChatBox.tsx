@@ -6,7 +6,10 @@ export const ChatBox = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex w-full gap-4 px-8 py-4 border-t border-gray-200">
+    <form
+      onSubmit={handleSubmit}
+      className="flex w-full gap-4 px-8 py-4 border-t border-gray-200 bg-slate-50"
+    >
       <input
         className="w-full p-2.5 border rounded-lg border-slate-200 outline-none focus:border-slate-400 transition"
         placeholder="Digite sua mensagem..."
@@ -14,7 +17,7 @@ export const ChatBox = () => {
       />
 
       <button
-        className="flex items-center justify-center px-4"
+        className="flex items-center justify-center px-4 transition rounded-lg bg-sky-500/10 hover:bg-sky-600/20"
         type="submit"
         aria-label="Enviar mensagem"
       >
