@@ -1,11 +1,16 @@
 import { useEffect, useState } from 'react';
 
-import { getChats } from '../lib/Chats';
-import { ChatPreview } from '../typings';
+import { getChat, getChats } from '../lib/Chats';
+import { Chat, ChatPreview, Message } from '../typings';
 
 interface UseChatsType {
   isLoading: boolean;
   chats: ChatPreview[] | null;
+}
+
+interface UseChatType {
+  isLoading: boolean;
+  chat: Chat | null;
 }
 
 export function useChats(): UseChatsType {
@@ -31,5 +36,28 @@ export function useChats(): UseChatsType {
   return {
     isLoading,
     chats,
+  };
+}
+
+export function useChat(id: string): UseChatType {
+  const [isLoading, setLoading] = useState(true);
+  const [chat, setChat] = useState<Chat | null>(null);
+
+  useEffect(() => {
+    getChat(id)
+      .then((chat) => {
+        setChat(chat);
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+  return {
+    isLoading,
+    chat,
   };
 }
