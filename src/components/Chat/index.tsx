@@ -1,3 +1,7 @@
+import { useParams } from 'react-router-dom';
+
+import { useChat } from '../../hooks/useChats';
+
 import { ChatBox } from './ChatBox';
 import { ChatHeader } from './ChatHeader';
 import { ChatMessage } from './ChatMessage';
@@ -7,9 +11,20 @@ function randomBoolean() {
 }
 
 export const Chat = () => {
+  const { id } = useParams();
+  const { chat, isLoading } = useChat(id);
+
+  if (!isLoading && !chat) {
+    return <div>Chat not found</div>;
+  }
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="flex flex-col flex-1">
-      <ChatHeader name="Chat name" />
+      <ChatHeader name={chat!.name} />
 
       <ul className="flex flex-col flex-1 gap-2 py-8 overflow-y-auto">
         <li>
