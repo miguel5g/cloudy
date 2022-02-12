@@ -3,12 +3,15 @@ import { useParams } from 'react-router-dom';
 
 import { ChatLink } from './ChatLink';
 import { ChatsHeader } from './ChatsHeader';
+import { LoadingChats } from '../loading/Chats';
 
 import { useChats } from '../../hooks/useChats';
 
 export const Chats = () => {
-  const { chats } = useChats();
   const params = useParams();
+  const { chats, isLoading } = useChats();
+
+  if (isLoading) return <LoadingChats />;
 
   return (
     <section className="flex flex-col w-full max-w-sm gap-4 p-4 overflow-y-auto border-r border-gray-200">
