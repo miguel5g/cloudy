@@ -7,6 +7,7 @@ interface ChatLinkProps {
 }
 
 export const ChatLink = ({ chat }: ChatLinkProps) => {
+  /* TODO: Compare with id of logged user */
   const isSender = chat.lastMessage.author.id === '1';
 
   return (
