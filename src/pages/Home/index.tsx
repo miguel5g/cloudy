@@ -1,7 +1,8 @@
+import { Outlet } from 'react-router-dom';
+
 import { Apps } from '../../components/Apps';
 import { Chats } from '../../components/Chats';
 import { Header } from '../../components/Header';
-import { Instructions } from '../../components/Instructions';
 
 export const Home = () => {
   return (
@@ -14,7 +15,7 @@ export const Home = () => {
         <main className="flex flex-1 overflow-hidden">
           <Chats />
 
-          <Instructions />
+          <Outlet />
         </main>
       </section>
     </div>
