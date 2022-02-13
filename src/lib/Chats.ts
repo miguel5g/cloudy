@@ -30,7 +30,7 @@ export async function getChats(): Promise<ChatPreview[]> {
   return new Promise<ChatPreview[]>((resolve, _reject) => {
     setTimeout(() => {
       resolve(chats);
-    }, 200);
+    }, 5000);
   });
 }
 
@@ -49,6 +49,6 @@ export async function getChat(id: string): Promise<Chat | null> {
           { id: '3', name: 'User 3', avatarUrl: 'https://via.placeholder.com/64/e0f2fe' },
         ],
       });
-    }, 200);
+    }, 5000);
   });
 }

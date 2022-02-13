@@ -4,6 +4,7 @@ import { Chat } from './components/Chat';
 import { ChatInfo } from './components/ChatInfo';
 import { Instructions } from './components/Instructions';
 import { Home } from './pages/Home';
+import { SignIn } from './pages/SignIn';
 
 export const AppRoutes = () => {
   return (
@@ -22,6 +23,7 @@ export const AppRoutes = () => {
             }
           />
         </Route>
+        <Route path="/signin" element={<SignIn />} />
       </Routes>
     </Router>
   );
