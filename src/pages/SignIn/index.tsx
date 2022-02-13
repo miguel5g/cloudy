@@ -6,6 +6,10 @@ import accessAccountSVG from '../../assets/svg/access-account.svg';
 import { TextInputGroup } from '../../components/TextInputGroup';
 
 export const SignIn = () => {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+  }
+
   return (
     <div className="flex min-h-screen">
       <section className="flex flex-col items-center justify-center flex-1 shadow-xl bg-gradient-to-br from-sky-300/80 to-sky-500/90">
@@ -18,6 +22,8 @@ export const SignIn = () => {
 
       <section className="flex items-center justify-center flex-1">
         <main className="flex flex-col flex-1 max-w-lg p-8">
+          {/* TODO: Add app logo */}
+
           <h2 className="text-4xl font-extrabold text-slate-900">Acessar conta</h2>
           <p className="font-light text-slate-400">
             Não tem uma conta?{' '}
@@ -26,7 +32,7 @@ export const SignIn = () => {
             </Link>
           </p>
 
-          <form className="mt-16">
+          <form className="mt-16" onSubmit={handleSubmit}>
             <TextInputGroup label="E-mail" icon={FiMail} type="email" placeholder="seu@email.com" />
 
             <TextInputGroup
