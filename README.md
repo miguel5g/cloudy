@@ -2,6 +2,14 @@
 
 Um aplicação de mensagens instantâneas em grupo.
 
+![Home Page](/.github/assets/home-page.png)
+
+<div align="center">
+  <img width="30%" src="./.github/assets/home-page.png" />
+  <img width="30%" src="./.github/assets/sign-in-page.png" />
+  <img width="30%" src="./.github/assets/sign-up-page.png" />
+</div>
+
 ## 🧪 Tecnologias
 
 As tecnologias utilizadas para desenvolver esta aplicação são:
