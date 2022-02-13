@@ -1,4 +1,4 @@
-import choseSVG from '../assets/svg/choose.svg';
+import choseSVG from '../../assets/svg/choose.svg';
 
 export const Instructions = () => {
   return (
