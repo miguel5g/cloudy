@@ -4,6 +4,9 @@ import { Apps } from '../../components/Apps';
 import { Chats } from '../../components/Chats';
 import { Header } from '../../components/Header';
 
+export { ChatOpen } from './ChatOpen';
+export { Instructions } from './Instructions';
+
 export const Home = () => {
   return (
     <div className="flex h-screen">
