@@ -17,12 +17,12 @@ export const AuthContextProvider: React.FC = ({ children }) => {
   useEffect(() => {
     /* TODO: Implement auth checker */
     setTimeout(() => {
-      setIsLoading(false);
       setUser({
         id: '1',
         name: 'John Doe',
         avatarUrl: 'https://via.placeholder.com/64',
       });
+      setIsLoading(false);
     }, 200);
   }, []);
 
