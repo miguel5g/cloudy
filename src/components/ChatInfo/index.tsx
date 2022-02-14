@@ -1,13 +1,10 @@
-import { useParams } from 'react-router-dom';
-
-import { useChat } from '../../hooks/useChats';
+import { useChat } from '../../hooks/useChat';
 
 import { LoadingChatInfo } from '../loading/ChatInfo';
 import { ChatMember } from './ChatMember';
 
 export const ChatInfo = () => {
-  const { id } = useParams();
-  const { chat, isLoading } = useChat(id);
+  const { isLoading, chat } = useChat();
 
   if (isLoading) return <LoadingChatInfo />;
 
