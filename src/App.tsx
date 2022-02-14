@@ -1,3 +1,5 @@
+import { Toaster } from 'react-hot-toast';
+
 import { AuthContextProvider } from './contexts/AuthContext';
 import { ChatsContextProvider } from './contexts/ChatsContext';
 import { SocketContextProvider } from './contexts/SocketContext';
@@ -11,6 +13,7 @@ export const App = () => {
       <AuthContextProvider>
         <ChatsContextProvider>
           <AppRoutes />
+          <Toaster position="top-center" />
         </ChatsContextProvider>
       </AuthContextProvider>
     </SocketContextProvider>
