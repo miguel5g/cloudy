@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FiPlus } from 'react-icons/fi';
-import { CreateChatModal } from './CreateChatModal';
+
+import { CreateChatModal } from '../CreateChatModal';
 
 export const ChatsHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
