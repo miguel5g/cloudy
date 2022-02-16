@@ -24,7 +24,7 @@ export const Chat = () => {
     <div className="flex flex-col flex-1">
       <ChatHeader name={chat!.name} />
 
-      <ul className="flex flex-col flex-1 gap-2 py-8 overflow-y-auto">
+      <ul className="flex flex-col flex-1 gap-2 py-8 overflow-y-scroll scrollbar scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-200">
         <li>
           <ChatMessage isFirstFromAuthor={randomBoolean()} isSender={randomBoolean()} />
         </li>

@@ -19,7 +19,7 @@ export const Chats = () => {
   }
 
   return (
-    <section className="flex flex-col w-full max-w-sm gap-4 p-4 overflow-y-auto border-r border-gray-200">
+    <section className="flex flex-col w-full max-w-sm gap-4 p-4 overflow-y-scroll border-r border-gray-200 scrollbar scrollbar-thin scrollbar-track-transparent scrollbar-thumb-slate-200">
       <ChatsHeader />
 
       <ul className="flex flex-col gap-1">
